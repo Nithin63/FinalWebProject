@@ -1,22 +1,27 @@
 {% extends "layout.html" %}
 {% block content %}
-<h2 style="margin-top: 20px">Rotten Tomato ratings of movies with Robert De Niro.</h2>
-<table class="table" style="margin-top: 20px">
+<table class="table">
     <thead>
     <tr>
-        <th scope="col">No.</th>
-        <th scope="col">Year</th>
-        <th scope="col">Score</th>
-        <th scope="col">Title</th>
+        <th scope="col">Home Index</th>
+        <th scope="col">Zip Code</th>
+        <th scope="col">Baths in Home</th>
+        <th scope="col">Living Space (sqr ft)</th>
+        <th scope="col">Beds in Home</th>
+        <th scope="col">Year Built</th>
+        <th scope="col">Listing Price</th>
     </tr>
     </thead>
     <tbody>
-    {% for d in deniro %}
+    {% for home in homes %}
     <tr>
-        <td><a href="view/{{d.id}}">{{ d.id }}</a></td>
-        <td>{{ d.Year }}</td>
-        <td>{{ d.Score }}</td>
-        <td>{{ d.Title }}</td>
+        <td><a href="view/{{home.id}}">{{ home.fldIndex }}</a></td>
+        <td>{{ home.fldLivingSpacesqr }}</td>
+        <td>{{ home.fldBeds }}</td>
+        <td>{{ home.fldBaths }}</td>
+        <td>{{ home.fldZip }}</td>
+        <td>{{ home.fldYear }}</td>
+        <td>{{ home.fldListPrice }}</td>
     </tr>
     {% endfor %}
     </tbody>
