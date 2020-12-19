@@ -1,22 +1,21 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<h5 class="card-title" style="margin-top: 20px">No.{{ rating.id }} - {{ rating.Title }}</h5>
-
 <div class="card" class="m-5 p-2">
+    <h5 class="card-title">{{ home.fldIndex }} - {{ home.fldZip }}</h5>
+
     <ul class="list-group list-group-flush">
-        <li class="list-group-item">Year: {{ rating.Year }}</li>
-        <li class="list-group-item">Score: {{ rating.Score }}</li>
-        <li class="list-group-item">Title: {{ rating.Title }}</li>
+        <li class="list-group-item">Space sq ft: {{ home.fldLivingSpacesqr }}</li>
+        <li class="list-group-item">Beds: {{ home.fldBeds }}</li>
+        <li class="list-group-item">Year: {{ home.fldYear }}</li>
+        <li class="list-group-item">Baths: {{ home.fldBaths }}</li>
+        <li class="list-group-item">Listing Price: {{ home.fldListPrice }}</li>
     </ul>
     <div class="card-body">
-        <form action="/delete/{{rating.id}}" method="post">
-            <a href="/edit/{{rating.id}}" class="card-link btn btn-primary">Edit</a>
-            <button type="submit" class="btn btn-danger">Delete</button>
-        </form>
+        <a href="/edit/{{home.id}}" class="card-link btn btn-primary">edit</a>
     </div>
 </div>
-
+<form action="/delete/{{home.id}}" method="post"><button type="submit" class="btn btn-danger">Delete</button></form>
 
 
 {% endblock %}
