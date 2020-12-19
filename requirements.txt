@@ -1,5 +1,0 @@
-Flask
-mysql-connector
-simplejson
-python-dotenv
-flask_oidc
